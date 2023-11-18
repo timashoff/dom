@@ -1,0 +1,40 @@
+:root {
+  /* dark theme */
+  --background-dt: rgb(46, 52, 64);
+  --text-dt: rgb(216, 222, 233);
+
+  /* light theme */
+}
+
+body {
+  background: var(--background-dt);
+  color: var(--text-dt);
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td,
+th {
+  padding: 0.7em 1.5em;
+  border: 1px solid sandybrown;
+}
+
+.up::after {
+  color: lightgreen;
+  content: ' ↓';
+}
+
+.down::after {
+  color: orange;
+  content: ' ↑';
+  width: calc(50% + 114px);
+}
+
+thead {
+  background: rgba(240, 128, 128, 0.1);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  user-select: none;
+}
