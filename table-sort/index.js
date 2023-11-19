@@ -5,8 +5,8 @@ const sortData = (e) => {
   const sortName = elem.textContent
 
   const arr = elem.classList.contains('up')
-    ? dataUser.toSorted((a, b) => a[sortName] > b[sortName])
-    : dataUser.toSorted((a, b) => b[sortName] > a[sortName])
+    ? dataUser.toSorted((a, b) => (a[sortName] > b[sortName] ? 1 : -1))
+    : dataUser.toSorted((a, b) => (b[sortName] > a[sortName] ? 1 : -1))
 
   return arr
 }
