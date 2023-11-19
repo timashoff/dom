@@ -54,3 +54,5 @@ export const dataUser = [
     id: 9,
   },
 ]
+
+export const columnOrder = ['id', 'name', 'surname', 'age']

@@ -1,4 +1,4 @@
-import { dataUser } from './const.js'
+import { dataUser, columnOrder } from './const.js'
 
 const sortData = (e) => {
   const elem = e.target
@@ -16,6 +16,7 @@ const createTable = (data) => {
   const head = createTableHead(data)
   const body = createTableBody(data)
   table.append(head, body)
+  orderTable(table)
   return table
 }
 
@@ -27,7 +28,7 @@ const createTableHead = (data) => {
   for (const title of titles) {
     const cell = document.createElement('th')
     cell.textContent = title
-    cell.setAttribute('data-head', title)
+    cell.setAttribute('data-column', title)
     cell.addEventListener('click', sortTable)
     row.append(cell)
   }
@@ -40,15 +41,18 @@ const createTableBody = (data) => {
   const arr = []
   for (let i = 0; i < data.length; i++) {
     const row = document.createElement('tr')
-    Object.values(data[i]).forEach((d) => {
+    const values = Object.values(data[i])
+    const keys = Object.keys(data[i])
+    values.forEach((value, i) => {
       const cell = document.createElement('td')
-      cell.textContent = d
+      cell.textContent = value
+      cell.setAttribute('data-column', keys[i])
       row.append(cell)
       arr.push(row)
     })
   }
   body.append(...arr)
-  // body.id = new Date().getMilliseconds()
+  orderTable(body)
   return body
 }
 
@@ -76,6 +80,16 @@ const sortTable = (e) => {
   const tbody = document.querySelector('tbody')
   tbody.remove()
   table.append(createTableBody(data))
+}
+
+const orderTable = (elem) => {
+  const rows = elem.querySelectorAll('tr')
+  for (const row of rows) {
+    columnOrder.forEach((name, i) => {
+      const column = row.querySelector(`[data-column="${name}"]`)
+      column.style.order = i
+    })
+  }
 }
 
 document.body.append(createTable(dataUser))

@@ -2,7 +2,8 @@
 
 - [x] git init
 - [ ] refactror the code (addEventListener section)
-- [x] add data-\* attributes to head of table
+- [x] add data-column attributes
+- [x] add column order
 - [ ] fix table css style when sort is active
 - [x] fix chrome's sorting behavior
 

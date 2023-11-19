@@ -13,12 +13,31 @@ body {
 
 table {
   border-collapse: collapse;
+  border: 1px solid rgba(255, 160, 122, 0.315);
+}
+
+thead {
+  background: rgba(240, 128, 128, 0.1);
+  text-transform: uppercase;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+
+tr {
+  display: flex;
+  flex-direction: row;
 }
 
 td,
 th {
   padding: 0.7em 1.5em;
-  border: 1px solid sandybrown;
+  width: 95px;
+  text-align: center;
 }
 
 .up::after {
@@ -29,12 +48,4 @@ th {
 .down::after {
   color: orange;
   content: ' ↑';
-  width: calc(50% + 114px);
-}
-
-thead {
-  background: rgba(240, 128, 128, 0.1);
-  text-transform: uppercase;
-  -webkit-user-select: none;
-  user-select: none;
 }
