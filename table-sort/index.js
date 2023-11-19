@@ -27,10 +27,10 @@ const createTableHead = (data) => {
   for (const title of titles) {
     const cell = document.createElement('th')
     cell.textContent = title
+    cell.setAttribute('data-head', title)
     cell.addEventListener('click', sortTable)
     row.append(cell)
   }
-
   head.append(row)
   return head
 }
