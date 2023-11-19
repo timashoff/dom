@@ -1,8 +1,9 @@
 #todo
 
 - [x] git init
-- [ ] refactror code (addEventListener section)
-- [ ] fix table style when sort is active
-- [ ] fixh chrome behavior
+- [ ] refactror the code (addEventListener section)
+- [ ] add data-\* attributes to head of table
+- [ ] fix table css style when sort is active
+- [x] fix chrome's sorting behavior
 
 deploy [link](https://timashoff.github.io/dom/table-sort/)
